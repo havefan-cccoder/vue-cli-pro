@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import storage from '../components/storage.js'
+
 export default {
     name: 'todolist',
     data () {
@@ -36,26 +38,30 @@ export default {
     },
     methods: {
         doAdd(e) {
-            if(e.keyCode == 13){
+            if(e && e.keyCode == 13 || !e){
                 this.list.push({
                     title: this.todo,
                     checked: false
                 });
                 this.todo = ''; 
 
-                localStorage.setItem('list', JSON.stringify(this.list));
+                storage.set('list', this.list);
+                // localStorage.setItem('list', JSON.stringify(this.list));
             }
             
         },
         delData(_key) {
-            this.list.splice(_key,1)
+            this.list.splice(_key,1);
+            storage.set('list', this.list);
         },
         saveList() {
-            localStorage.setItem('list', JSON.stringify(this.list));
+            storage.set('list', this.list);
+            // localStorage.setItem('list', JSON.stringify(this.list));
         }
     },
     mounted () {//生命周期函数
-        var list = JSON.parse(localStorage.getItem('list'));
+        var list = storage.get('list');
+        // var list = JSON.parse(localStorage.getItem('list'));
         if(list){
             this.list = list;
         }
