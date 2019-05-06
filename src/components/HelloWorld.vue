@@ -42,7 +42,7 @@
     <br>
     <input type="text" ref="userinfo" />
     <div ref="box">box</div>
-    <button v-on:click="getInputValue()">获取input值，并改变div颜色</button>
+    <button v-on:click="getInputValue()">获取input值,并改变div颜色</button>
     <hr>
     <br>
     <button data-aid="133" @click="eventFn($event)">事件获取自定义属性值</button>
