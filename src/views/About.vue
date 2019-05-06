@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <p>基本使用说明</p>
     <p>{{message}}</p>
     <input type="text" name="" id="" v-model="message">
     <p>{{objvalue.name}}</p>
