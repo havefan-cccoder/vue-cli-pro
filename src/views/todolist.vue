@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import storage from '../components/storage.js'
+import storage from '../model/storage.js'
 
 export default {
     name: 'todolist',
