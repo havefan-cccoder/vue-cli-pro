@@ -1,7 +1,12 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>首页</p>
+    <p>首页子组件{{title}}</p>
+    <button @click="run('123')">子组件里按钮</button>
+    <button @click="getParent()">获取父组件</button>
+    <p>{{childdata}}</p>
+
+    <button @click="getParentData()">主动获取父组件数据</button>
   </div>
 </template>
 
@@ -9,7 +14,27 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    title: String,
+    run: Function,
+    home: Object // 把整个父组件传进来了
+  },
+  data () {
+    return {
+      childdata: '子组件数据'
+    }
+  },
+  methods: {
+    getParent(){
+      this.run(145)
+      //或者this.home.run(145)
+    },
+    childFun(){
+      alert('childFn');
+    },
+    getParentData() {
+      alert(this.$parent.message);
+    }
   }
 }
 </script>

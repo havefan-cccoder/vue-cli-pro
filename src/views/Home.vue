@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="getChild()">获取子组件</button>
+    <hr>
+    <HelloWorld msg="Welcome to Your Vue.js App" title="好的" :run="run" :home="this" ref="childcomponent"/>
     <!-- <button @click="getData()">请求数据</button> -->
   </div>
 </template>
@@ -15,7 +17,19 @@ export default {
   components: {
     HelloWorld
   },
+  data () {
+    return {
+      message: '父组件的数据'
+    }
+  },
   methods: {
+    run(val) {
+      alert(val)
+    },
+    getChild() {
+      alert(this.$refs.childcomponent.childdata);
+      this.$refs.childcomponent.childFun();
+    }
     // getData() {
     //   var api = '/master/login';
 
