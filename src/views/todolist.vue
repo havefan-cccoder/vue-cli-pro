@@ -38,14 +38,14 @@ export default {
     },
     methods: {
         doAdd(e) {
-            if(e && e.keyCode == 13 || !e){
+            if(e && e.keyCode == 13 || !e){ // %%%判断回车事件%%%
                 this.list.push({
                     title: this.todo,
                     checked: false
                 });
                 this.todo = ''; 
 
-                storage.set('list', this.list);
+                storage.set('list', this.list); // %%%使用封装的组件%%%
                 // localStorage.setItem('list', JSON.stringify(this.list));
             }
             
