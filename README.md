@@ -91,5 +91,28 @@ this.$parent.属性，this.$parent.方法
     }
 
 
-## 子组件向父组件传参——
-$emit??
+## 子组件向父组件传参以及非父子组件之间传值——
+1.新建js文件，import vue，用new实例化Vue，然后export
+```
+import Vue from 'vue';
+
+var VueEvent  = new Vue();
+
+export default VueEvent;
+```
+2.需要广播的组件里，先import 刚才那个实例，然后$emit
+```
+import VueEvent from '../model/VueEvent.js'
+
+methods: {
+        sendData() {
+            VueEvent.$emit('to-about', this.message);
+        }
+}
+```
+3.需要接收数据的组件里，$on
+```
+VueEvent.$on('to-about', function(data){
+    alert(data)
+})
+```
