@@ -29,8 +29,8 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-### 父组件向子组件传参——
-## 父组件里：
+## 父组件向子组件传参——
+### 父组件里：
     传递：
     ```
     <HelloWorld msg="Welcome to Your Vue.js App" title="好的" :run="run" :home="this" />
@@ -43,7 +43,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
         }
     }
     ```
-## 子组件里：
+### 子组件里：
     接收：
     ```
     props: {
@@ -68,14 +68,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     }
     ```
 
-### 父组件向子组件传参（子组件主动获取）——
+## 父组件向子组件传参（子组件主动获取）——
 ```
 this.$parent.属性，this.$parent.方法
 ```
 
 
-### 子组件向父组件传参（父组件主动获取）——
-## 父组件里:
+## 子组件向父组件传参（父组件主动获取）——
+### 父组件里:
     接收：
     ```
     <HelloWorld ref="childcomponent" />
@@ -91,7 +91,7 @@ this.$parent.属性，this.$parent.方法
         }
     }
     ```
-## 子组件里：
+### 子组件里：
     定义：
     ```
     data () {
@@ -107,7 +107,7 @@ this.$parent.属性，this.$parent.方法
     ```
 
 
-### 子组件向父组件传参——
+## 子组件向父组件传参——
 ```
 $emit??
 ```
