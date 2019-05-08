@@ -28,26 +28,33 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-```
-父组件向子组件传参——
-父组件里：
+
+### 父组件向子组件传参——
+## 父组件里：
     传递：
+    ```
     <HelloWorld msg="Welcome to Your Vue.js App" title="好的" :run="run" :home="this" />
+    ```
     定义：
+    ```
     methods: {
         run(val) {
             alert(val)
         }
     }
-子组件里：
+    ```
+## 子组件里：
     接收：
+    ```
     props: {
         msg: String,
         title: String,
         run: Function,
         home: Object // 把整个父组件传进来了
     },
+    ```
     使用:
+    ```
     <h1>{{ msg }}</h1>
     <p>首页子组件{{title}}</p>
     <button @click="run('123')">子组件里按钮</button><!--这里直接调用父组件的方法-->
@@ -59,18 +66,22 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
         //或者this.home.run(145)
         }
     }
+    ```
+
+### 父组件向子组件传参（子组件主动获取）——
 ```
-```
-父组件向子组件传参（子组件主动获取）——
 this.$parent.属性，this.$parent.方法
 ```
 
-```
-子组件向父组件传参（父组件主动获取）——
-父组件里:
+
+### 子组件向父组件传参（父组件主动获取）——
+## 父组件里:
     接收：
+    ```
     <HelloWorld ref="childcomponent" />
+    ```
     使用：
+    ```
     <button @click="getChild()">获取子组件</button>
 
     methods: {
@@ -79,8 +90,10 @@ this.$parent.属性，this.$parent.方法
             this.$refs.childcomponent.childFun();
         }
     }
-子组件里：
+    ```
+## 子组件里：
     定义：
+    ```
     data () {
         return {
             childdata: '子组件数据'
@@ -91,9 +104,10 @@ this.$parent.属性，this.$parent.方法
             alert('childFn');
         }
     }
-```
+    ```
 
+
+### 子组件向父组件传参——
 ```
-子组件向父组件传参——
 $emit??
 ```
