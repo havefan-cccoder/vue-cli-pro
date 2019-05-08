@@ -5,17 +5,26 @@
     <hr>
     <HelloWorld msg="Welcome to Your Vue.js App" title="好的" :run="run" :home="this" ref="childcomponent"/>
     <!-- <button @click="getData()">请求数据</button> -->
+
+    <br>
+    <hr>
+    <onecom />
+    <twocom />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import onecom from '@/components/onecom.vue'
+import twocom from '@/components/twocom.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    HelloWorld,
+    onecom,
+    twocom
   },
   data () {
     return {
