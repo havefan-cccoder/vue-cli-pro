@@ -25,6 +25,11 @@ export default new Router({
       path: '/todolist',
       name: 'todolist',
       component: () => import('./views/todolist.vue')
+    },
+    {
+      path: '/calculator',
+      name: 'calculator',
+      component: () => import('./views/calculator.vue')
     }
   ]
 })
