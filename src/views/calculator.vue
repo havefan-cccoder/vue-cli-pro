@@ -23,6 +23,8 @@
         <button v-if="tureanswer" class="reusltbox">{{sumvvalue | getDecimal}}</button>
         <button v-if="tureanswer" class="rightanswer"  @click="chooseResult('y')">√</button>
         <button v-if="tureanswer" class="wronganswer"  @click="chooseResult('n')">×</button>
+
+        <p class="resourcelink">项目仿照来源：<a href="https://segmentfault.com/a/1190000017539885" target="_blank" rel="noopener noreferrer">前端每日实战-思否</a></p>
     </div>
 </template>
 
@@ -108,8 +110,8 @@ export default {
 
 <style scoped>
 .countbox{
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
     text-align: center;
 }
 .outerbox{
@@ -197,3 +199,14 @@ button{
 }
 </style>
 
+<style>
+.resourcelink{
+    font-size: 12px;
+    text-align: center;
+    color: blueviolet;
+    margin-top: 55px;
+}
+.resourcelink a{
+    color: #207456;
+}
+</style>
